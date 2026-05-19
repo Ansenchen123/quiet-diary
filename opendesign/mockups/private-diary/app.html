@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>靜日記設計預覽</title>
+    <link rel="stylesheet" href="../../../styles.css" />
+  </head>
+  <body>
+    <div class="app-shell unlocked">
+      <main class="main-app" style="display: block">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">設計預覽</p>
+            <h1>靜日記</h1>
+          </div>
+          <button class="icon-button" aria-label="鎖定 App"><span aria-hidden="true">⌕</span></button>
+        </header>
+        <section class="hero-cover theme-botanical">
+          <div class="hero-copy">
+            <p>2026年5月19日 星期二</p>
+            <h2>你的日記本已上鎖保存</h2>
+          </div>
+          <div class="theme-chip">Botanical</div>
+        </section>
+        <nav class="tabs" aria-label="主要功能">
+          <button class="tab active" type="button">新增</button>
+          <button class="tab" type="button">時間線</button>
+          <button class="tab" type="button">回憶</button>
+          <button class="tab" type="button">主題</button>
+          <button class="tab" type="button">備份</button>
+        </nav>
+        <section class="view active" style="display: grid; gap: 16px">
+          <div class="section-heading">
+            <h2>快速記一筆</h2>
+            <span>已存在這台裝置</span>
+          </div>
+          <article class="entry-card">
+            <header>
+              <div>
+                <time>今天 下午 9:20</time>
+                <h3>安靜</h3>
+              </div>
+              <button class="button text" type="button">刪除</button>
+            </header>
+            <p>可以只留下一張照片、一段短影片，或一句今天想保存的話。</p>
+            <div class="tag-list"><span>雨天</span><span>家</span></div>
+          </article>
+          <div class="theme-options">
+            <button class="theme-option active" type="button"><div class="theme-swatch theme-botanical"></div><strong>Botanical</strong><small>pressed-leaf</small></button>
+            <button class="theme-option" type="button"><div class="theme-swatch theme-tide"></div><strong>Tide</strong><small>shoreline</small></button>
+            <button class="theme-option" type="button"><div class="theme-swatch theme-plum"></div><strong>Plum</strong><small>quiet-moon</small></button>
+            <button class="theme-option" type="button"><div class="theme-swatch theme-ochre"></div><strong>Ochre</strong><small>paper-sun</small></button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

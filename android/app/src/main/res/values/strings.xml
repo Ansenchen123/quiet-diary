@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">靜日記</string>
+    <string name="title_activity_main">靜日記</string>
+    <string name="package_name">app.quietdiary.personal</string>
+    <string name="custom_url_scheme">app.quietdiary.personal</string>
+</resources>

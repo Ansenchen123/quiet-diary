@@ -1,0 +1,39 @@
+{
+  "generated": "2026-05-19T00:00:00+08:00",
+  "sections": [
+    {
+      "id": "mockups",
+      "label": "Mockups",
+      "groups": [
+        {
+          "slug": "private-diary",
+          "files": [
+            {
+              "label": "app.html",
+              "path": "mockups/private-diary/app.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "design-systems",
+      "label": "Design Systems",
+      "groups": [
+        {
+          "slug": "diary",
+          "files": [
+            {
+              "label": "SKILL.md",
+              "path": "design-systems/diary/SKILL.md"
+            },
+            {
+              "label": "colors_and_type.css",
+              "path": "design-systems/diary/colors_and_type.css"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

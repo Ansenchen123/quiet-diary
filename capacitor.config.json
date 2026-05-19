@@ -1,0 +1,8 @@
+{
+  "appId": "app.quietdiary.personal",
+  "appName": "靜日記",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

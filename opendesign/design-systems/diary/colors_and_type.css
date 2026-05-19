@@ -1,0 +1,16 @@
+:root {
+  --diary-ink: #28231f;
+  --diary-muted: #756c63;
+  --diary-paper: #fffaf2;
+  --diary-linen: #f6efe5;
+  --diary-surface: #fffdf8;
+  --diary-line: #ded3c5;
+  --diary-rose: #b86f71;
+  --diary-moss: #6f8067;
+  --diary-clay: #a65f45;
+  --diary-night: #30343f;
+  --diary-radius: 8px;
+  --diary-shadow: 0 18px 50px rgba(72, 54, 39, 0.12);
+  --diary-heading-font: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --diary-ui-font: "Trebuchet MS", Verdana, sans-serif;
+}

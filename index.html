@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6efe5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="靜日記" />
+    <title>靜日記</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell" data-screen="lock">
+      <section id="lockScreen" class="lock-screen" aria-labelledby="lockTitle">
+        <div class="lock-art" aria-hidden="true">
+          <div class="book-cover cover-botanical">
+            <span></span>
+          </div>
+        </div>
+        <div class="lock-panel">
+          <p class="eyebrow">只屬於你的日記</p>
+          <h1 id="lockTitle">靜日記</h1>
+          <p id="lockHint" class="muted">第一次使用請設定 4-6 位 PIN。</p>
+          <form id="pinForm" class="pin-form">
+            <label for="pinInput">PIN</label>
+            <input id="pinInput" inputmode="numeric" autocomplete="current-password" minlength="4" maxlength="6" pattern="[0-9]{4,6}" type="password" />
+            <div class="pin-actions">
+              <button class="button primary" type="submit" id="pinSubmit">設定 PIN</button>
+              <button class="button ghost" type="button" id="bioButton">生物辨識</button>
+            </div>
+          </form>
+          <p id="lockMessage" class="form-message" role="status"></p>
+        </div>
+      </section>
+
+      <main id="mainApp" class="main-app" aria-label="靜日記 App">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h1>寫下一點就好</h1>
+          </div>
+          <button id="lockButton" class="icon-button" aria-label="鎖定 App" title="鎖定">
+            <span aria-hidden="true">⌕</span>
+          </button>
+        </header>
+
+        <section class="hero-cover" id="heroCover">
+          <div class="hero-copy">
+            <p id="heroDate">今天</p>
+            <h2 id="heroTitle">你的日記本已上鎖保存</h2>
+          </div>
+          <div class="theme-chip" id="themeChip">Botanical</div>
+        </section>
+
+        <nav class="tabs" aria-label="主要功能">
+          <button class="tab active" type="button" data-view="writeView">新增</button>
+          <button class="tab" type="button" data-view="timelineView">時間線</button>
+          <button class="tab" type="button" data-view="calendarView">回憶</button>
+          <button class="tab" type="button" data-view="themeView">主題</button>
+          <button class="tab" type="button" data-view="backupView">備份</button>
+        </nav>
+
+        <section id="writeView" class="view active" aria-labelledby="writeTitle">
+          <div class="section-heading">
+            <h2 id="writeTitle">快速記一筆</h2>
+            <span id="saveState">已存在這台裝置</span>
+          </div>
+          <form id="entryForm" class="entry-form">
+            <label for="entryDate">日記時間</label>
+            <input id="entryDate" type="datetime-local" />
+            <label for="entryText">內容</label>
+            <textarea id="entryText" rows="6" placeholder="今天想留下什麼？可以只放一張照片，也可以只選一個心情。"></textarea>
+            <div class="mood-row" role="radiogroup" aria-label="心情">
+              <button type="button" class="mood active" data-mood="安靜">安靜</button>
+              <button type="button" class="mood" data-mood="柔軟">柔軟</button>
+              <button type="button" class="mood" data-mood="晴朗">晴朗</button>
+              <button type="button" class="mood" data-mood="疲憊">疲憊</button>
+              <button type="button" class="mood" data-mood="">不選</button>
+            </div>
+            <label for="mediaInput">照片或短影片</label>
+            <input id="mediaInput" type="file" accept="image/*,video/*" multiple />
+            <div id="mediaPreview" class="media-preview" aria-live="polite"></div>
+            <label for="tagInput">標籤</label>
+            <input id="tagInput" type="text" placeholder="用逗號分隔，例如：家,旅行,雨天" />
+            <button class="button primary full" type="submit">儲存日記</button>
+            <p id="entryMessage" class="form-message" role="status"></p>
+          </form>
+        </section>
+
+        <section id="timelineView" class="view" aria-labelledby="timelineTitle">
+          <div class="section-heading">
+            <h2 id="timelineTitle">時間線</h2>
+            <button id="clearEntries" class="button text" type="button">清空全部</button>
+          </div>
+          <div id="entriesList" class="entries-list"></div>
+        </section>
+
+        <section id="calendarView" class="view" aria-labelledby="calendarTitle">
+          <div class="section-heading">
+            <h2 id="calendarTitle">回憶瀏覽</h2>
+            <span id="entryCount">0 篇</span>
+          </div>
+          <div id="calendarGrid" class="calendar-grid"></div>
+        </section>
+
+        <section id="themeView" class="view" aria-labelledby="themeTitle">
+          <div class="section-heading">
+            <h2 id="themeTitle">封面與主題</h2>
+            <button id="resetTheme" class="button text" type="button">還原預設</button>
+          </div>
+          <div id="themeOptions" class="theme-options"></div>
+          <label class="upload-cover" for="coverInput">
+            <span>換成自己的封面</span>
+            <small>選擇照片後會成為日記本封面</small>
+          </label>
+          <input id="coverInput" type="file" accept="image/*" />
+        </section>
+
+        <section id="backupView" class="view" aria-labelledby="backupTitle">
+          <div class="section-heading">
+            <h2 id="backupTitle">本機加密備份</h2>
+            <span>可手動備份</span>
+          </div>
+          <div class="backup-actions">
+            <button id="exportBackup" class="button primary" type="button">匯出加密檔</button>
+            <label class="button secondary" for="importBackup">匯入備份</label>
+            <input id="importBackup" type="file" accept="application/json,.json" />
+          </div>
+          <p id="backupMessage" class="form-message" role="status"></p>
+          <div class="sync-note">
+            <strong>未來也能同步</strong>
+            <p>目前先把日記安全存在這台裝置，之後可以加入雲端備份，讓換手機時也能帶著日記走。</p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
