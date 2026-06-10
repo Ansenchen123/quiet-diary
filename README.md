@@ -2,6 +2,10 @@
 
 Quiet Diary is a local-first private diary PWA that can also be packaged as a Capacitor Android debug app. It is designed for personal journaling on one device, with a PIN gate, local IndexedDB storage, manual encrypted backup files, installable PWA metadata, and an Android wrapper for device testing.
 
+## Screenshot
+
+![Quiet Diary PIN lock screen](docs/screenshots/lock-screen.png)
+
 ## Overview
 
 The project is a publish-ready private journaling app focused on offline-capable daily writing rather than accounts, collaboration, or cloud sync. The web app runs from static files, registers a Service Worker, stores diary data locally, and uses Capacitor to wrap the same web assets for Android with the app id configured in `capacitor.config.json`.
